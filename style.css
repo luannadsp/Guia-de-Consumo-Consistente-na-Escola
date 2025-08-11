@@ -1,4 +1,113 @@
-/* 🌱 Folhas flutuando decorativas */
+/* 🌿 Reset básico */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  scroll-behavior: smooth;
+}
+
+:root {
+  --accent: #2f855a;
+  --accent-light: #48bb78;
+  --muted: #666;
+  --bg: #f7faf7;
+  --text: #111;
+  --white: #fff;
+}
+
+/* 🌱 Base */
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  background: var(--bg);
+  color: var(--text);
+  line-height: 1.6;
+}
+
+/* 🌞 Cabeçalho */
+header {
+  background: linear-gradient(90deg, var(--accent), var(--accent-light));
+  color: white;
+  padding: 2rem;
+}
+
+header h1 {
+  font-size: 2rem;
+  margin-bottom: 0.5rem;
+}
+
+nav {
+  display: flex;
+  gap: 0.5rem;
+  flex-wrap: wrap;
+  margin-top: 1rem;
+}
+
+nav a {
+  color: white;
+  text-decoration: none;
+  padding: 0.4rem 0.6rem;
+  background: rgba(255, 255, 255, 0.12);
+  border-radius: 6px;
+  transition: background 0.3s, transform 0.2s;
+}
+
+nav a:hover {
+  background: rgba(255, 255, 255, 0.25);
+  transform: scale(1.05);
+}
+
+/* 📦 Conteúdo principal */
+.container {
+  max-width: 900px;
+  margin: 1.5rem auto;
+  padding: 1rem;
+}
+
+/* 🧾 Cartões */
+.card {
+  background: white;
+  padding: 1rem;
+  border-radius: 8px;
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.08);
+  margin-bottom: 1.5rem;
+  animation: fadeInUp 1.2s ease-out both;
+}
+
+/* 🔠 Títulos */
+h1, h2 {
+  margin: 0.2rem 0;
+}
+
+/* 📋 Categorias */
+.categories ul {
+  list-style: disc;
+  margin-left: 1.2rem;
+}
+
+/* 🖼️ Infográficos */
+.infographics {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 1rem;
+}
+
+.infographics img {
+  width: 100%;
+  height: 140px;
+  object-fit: cover;
+  border-radius: 6px;
+}
+
+/* 📱 Responsividade */
+@media (min-width: 700px) {
+  .grid {
+    display: grid;
+    grid-template-columns: 1fr 320px;
+    gap: 1rem;
+  }
+}
+
+/* 🍂 Folhas decorativas */
 .leaf {
   position: fixed;
   top: -40px;
@@ -31,7 +140,7 @@
   transform: rotate(-30deg) scale(1.1);
 }
 
-/* 🌬️ Animação de queda das folhas */
+/* 🍁 Animação das folhas */
 @keyframes fall {
   0% {
     transform: translateY(0) rotate(0deg);
@@ -41,11 +150,7 @@
   }
 }
 
-/* ✨ Animação de entrada suave das seções */
-.card {
-  animation: fadeInUp 1.5s ease-out both;
-}
-
+/* ✨ Fade suave nos cards */
 @keyframes fadeInUp {
   0% {
     opacity: 0;
@@ -57,17 +162,15 @@
   }
 }
 
-/* 🪴 Efeito de destaque nos links do menu */
-nav a {
-  transition: background 0.3s, transform 0.2s;
+/* 👣 Rodapé */
+footer {
+  color: var(--muted);
+  text-align: center;
+  padding: 1rem;
+  margin-top: 2rem;
 }
 
-nav a:hover {
-  background: rgba(255, 255, 255, 0.25);
-  transform: scale(1.05);
-}
-
-/* ♿ Acessibilidade: reduzir movimento se preferido */
+/* ♿ Acessibilidade */
 @media (prefers-reduced-motion: reduce) {
   * {
     animation: none !important;
